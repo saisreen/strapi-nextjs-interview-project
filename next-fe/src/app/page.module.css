@@ -1,0 +1,133 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-image: url('/next.svg');
+  background-size: 40%; 
+  background-repeat: no-repeat;
+  background-position: center bottom; 
+  position: relative;
+}
+
+.header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  position: relative;
+  z-index: 10;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.toggleButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #0070f3;
+  background-color: #fff;
+  color: #0070f3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton.active {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+.contentSection {
+  
+  flex-direction: column;
+  width: 90%;
+  max-width: 1000px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+}
+
+.blogSection,
+.videoSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blogCard,
+.videoCard {
+  
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.blogCard:hover,
+.videoCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blogImage,
+.video {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+.blogContent,
+.videoContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.blogContent h3,
+.videoContent h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.blogContent p,
+.videoContent p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  text-align: right;
+  color: #555;
+}
+
+.logo {
+  position: right;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: auto;
+  z-index: 10;
+  filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+}
+
+@media (max-width: 768px) {
+  .blogCard,
+  .videoCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blogImage,
+  .video {
+    margin-bottom: 1rem;
+  }
+}
